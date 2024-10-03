@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: crud_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  wildfly:
+    image: jboss/wildfly:latest
+    container_name: wildfly
+    ports:
+      - "8080:8080"  # Expose WildFly's default port
+    volumes:
+      - ./target/sbg-assess-1.0-SNAPSHOT.war:/opt/jboss/wildfly/standalone/deployments/sbg-assess-1.0-SNAPSHOT.war  # Mount WAR file
+    command: [ "/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0" ]
+volumes:
+  pgdata:
