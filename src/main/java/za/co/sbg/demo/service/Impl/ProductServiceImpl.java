@@ -3,7 +3,6 @@ package za.co.sbg.demo.service.Impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import za.co.sbg.demo.domain.request.ProductRequest;
-import za.co.sbg.demo.handler.exception.ResourceNotFoundException;
 import za.co.sbg.demo.persistence.entity.Product;
 import za.co.sbg.demo.persistence.repository.ProductRepository;
 import za.co.sbg.demo.service.ProductService;

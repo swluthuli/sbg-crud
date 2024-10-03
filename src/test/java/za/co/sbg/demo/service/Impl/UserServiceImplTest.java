@@ -67,7 +67,6 @@ class UserServiceImplTest {
     void testCreateUser_Success() {
         // Arrange
         UserRequest userRequest = UserRequest.builder().name("User1").email("user1@mail.com").password("password").build();
-        User user = User.builder().id(1L).name("User1").email("user1@mail.com").password("password").build();
 
         doNothing().when(userRepository).createUser(any(User.class));
 

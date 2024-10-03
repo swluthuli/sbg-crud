@@ -1,6 +1,5 @@
 package za.co.sbg.demo.persistence.repository;
 
-import za.co.sbg.demo.persistence.entity.Product;
 import za.co.sbg.demo.persistence.entity.User;
 
 import java.util.List;

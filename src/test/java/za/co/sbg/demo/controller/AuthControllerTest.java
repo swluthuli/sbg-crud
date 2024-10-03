@@ -11,6 +11,7 @@ import za.co.sbg.demo.service.AuthService;
 import javax.ws.rs.core.Response;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
 class AuthControllerTest {
@@ -61,6 +62,6 @@ class AuthControllerTest {
 
         // Assert
         assertEquals(Response.Status.OK.getStatusCode(), response.getStatus()); // The controller still returns OK
-        assertEquals(null, response.getEntity()); // But the entity (token) is null
+        assertNull(response.getEntity()); // But the entity (token) is null
     }
 }

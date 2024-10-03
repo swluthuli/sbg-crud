@@ -58,9 +58,7 @@ class AuthServiceImplTest {
         LoginRequest loginRequest = new LoginRequest(); // Invalid request (no username/password)
 
         // Act & Assert
-        ConstraintViolationException exception = assertThrows(ConstraintViolationException.class, () -> {
-            authService.login(loginRequest);
-        });
+        ConstraintViolationException exception = assertThrows(ConstraintViolationException.class, () -> authService.login(loginRequest));
 
         assertEquals("Please provide a valid username/password", exception.getMessage());
         verify(userRepository, never()).findByUsername(anyString(), anyString());
@@ -77,9 +75,7 @@ class AuthServiceImplTest {
         when(userRepository.findByUsername("unknownUser", "password")).thenReturn(null);
 
         // Act & Assert
-        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> {
-            authService.login(loginRequest);
-        });
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> authService.login(loginRequest));
 
         assertEquals("User not found", exception.getMessage());
         verify(userRepository, times(1)).findByUsername("unknownUser", "password");

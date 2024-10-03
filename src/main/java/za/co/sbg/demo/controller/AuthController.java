@@ -4,7 +4,6 @@ import za.co.sbg.demo.domain.request.LoginRequest;
 import za.co.sbg.demo.service.AuthService;
 
 import javax.inject.Inject;
-import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
