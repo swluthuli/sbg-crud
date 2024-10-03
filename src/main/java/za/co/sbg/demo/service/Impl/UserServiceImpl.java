@@ -3,7 +3,6 @@ package za.co.sbg.demo.service.Impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import za.co.sbg.demo.domain.request.UserRequest;
-import za.co.sbg.demo.handler.exception.ResourceNotFoundException;
 import za.co.sbg.demo.persistence.entity.User;
 import za.co.sbg.demo.persistence.repository.UserRepository;
 import za.co.sbg.demo.service.UserService;
@@ -11,7 +10,6 @@ import za.co.sbg.demo.service.factory.UserFactory;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 import static za.co.sbg.demo.validation.UserValidation.validateRequest;

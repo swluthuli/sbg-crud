@@ -19,14 +19,14 @@ import static org.mockito.Mockito.*;
 class UserControllerTest {
 
     @InjectMocks
-    private UserController userController; // Controller to test
+    private UserController userController;
 
     @Mock
-    private UserService userService; // Mocked service
+    private UserService userService;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this); // Initialize mocks
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test

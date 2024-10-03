@@ -17,14 +17,14 @@ import static org.mockito.Mockito.when;
 class AuthControllerTest {
 
     @InjectMocks
-    private AuthController authController; // Controller we are testing
+    private AuthController authController;
 
     @Mock
-    private AuthService authService; // Mocked service
+    private AuthService authService;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this); // Initialize mocks
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -54,14 +54,13 @@ class AuthControllerTest {
         loginRequest.setUsername("invalidUser");
         loginRequest.setPassword("invalidPassword");
 
-        // Mock the behavior of AuthService to return null for invalid login
         when(authService.login(loginRequest)).thenReturn(null);
 
         // Act
         Response response = authController.login(loginRequest);
 
         // Assert
-        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus()); // The controller still returns OK
-        assertNull(response.getEntity()); // But the entity (token) is null
+        assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        assertNull(response.getEntity());
     }
 }
